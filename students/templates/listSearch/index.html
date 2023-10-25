@@ -1,0 +1,81 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{%static 'search/fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet" href="{%static 'search/css/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{%static 'search/css/bootstrap.min.css'%}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{%static 'search/css/style.css'%}">
+
+    <title>Topic</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <h2 class="mb-5">Result</h2>
+      
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>  
+
+              
+              
+              <th scope="col">Order</th>
+              <th scope="col">Title</th>
+              <th scope="col">Crater</th>
+              <th scope="col">Group Members</th>
+              <th scope="col">Time</th>
+			  
+            </tr>
+          </thead>
+          <tbody>
+            
+			  {%for group in group%}
+            <td>
+				{{ forloop.counter }}
+              </td>
+              <td><a href="/home/{{group.threads}}">{{group.threads}}</a></td>
+              <td>
+                {{group.creator.first_name}} {{group.creator.last_name}}
+                <small class="d-block">{{group.creator.username}}</small>
+              </td>
+              <td>{{group.groupMembers}}</td>
+              <td>{{group.timeCreated}}</td>
+            </tr>
+			{%endfor%}
+            
+            
+            
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+  </div>
+    
+    
+
+    <script src="{%static 'search/js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{%static 'search/js/popper.min.js'%}"></script>
+    <script src="{%static 'search/js/bootstrap.min.js'%}"></script>
+    <script src="{%static 'search/js/main.js'%}"></script>
+  </body>
+</html>

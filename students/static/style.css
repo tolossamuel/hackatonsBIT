@@ -107,25 +107,26 @@ html {
   height: 100%;
   font-size: 1rem;
   font-family: Lato, sans-serif;
-  --slack-blue: #376cdf;
-  --slack-dark-blue: darkblue;
-  --slack-cyan: #6ecadc;
-  --slack-green: #3eb991;
-  --slack-red: #e01563;
-  --slack-yellow: #e9a820;
-  --slack-tag-background: #f8f8f8;
-  --slack-tag-border-color: rgba(97, 96, 97, 1);
-  --slack-tag-forecolor: rgba(134, 134, 134, 1);
-  --slack-search-background: #073642;
-  --slack-background: #350d36;
-  --slack-input-border-color: rgba(29, 28, 29, 0.5);
+  --SSync-blue: #376cdf;
+  --SSync-dark-blue: darkblue;
+  --SSync-cyan: #6ecadc;
+  --SSync-green: #3eb991;
+  --SSync-red: #e01563;
+  --SSync-yellow: #e9a820;
+  --SSync-tag-background: #f8f8f8;
+  --SSync-tag-border-color: rgba(97, 96, 97, 1);
+  --SSync-tag-forecolor: rgba(134, 134, 134, 1);
+  --SSync-search-background:var(---SSync-cyan);
+  --SSync-background: var(--SSync-cyan);
+  --SSync-input-border-color: var(--SSync-cyan);
   --dark-grey: #9e9a9a;
-  --slack-other-bckground: #3f0e40;
-  --slack-white: #cfc3cf;
-  --slack-border-color: rgb(82, 38, 83);
-  --slack-main-white: #ffffff;
+  --SSync-other-bckground: var(--SSync-cyan);
+  --SSync-white: #e2d9e2;
+  --SSync-border-color: rgb(248, 244, 244);
+  --SSync-main-white: #ffffff;
   --light-gray: #f1f3f5;
 }
+
 
 body {
   margin: 0;
@@ -265,15 +266,15 @@ body::-webkit-scrollbar-thumb {
   grid-template-rows: 2.375rem 1fr;
 }
 
-/* Header and navigation  */
+/* Header and navigation  
 .header {
   grid-row: 1 / 2;
-  width: 100%;
+  width: %;
 }
-
+*/
 .nav {
   width: 100%;
-  background: var(--slack-background);
+  background: var(--SSync-background);
   display: flex;
   align-items: center;
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
@@ -287,7 +288,7 @@ body::-webkit-scrollbar-thumb {
 .nav .icons a {
   margin-right: 2rem;
   font-size: 1.25rem;
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
 }
 .nav .icons .grey {
   color: var(--dark-grey);
@@ -303,25 +304,25 @@ body::-webkit-scrollbar-thumb {
   /* min-width: 0; */
   width: 31.25rem;
   height: 1.5rem;
-  border: 0.1rem solid var(--slack-border-color);
+  border: 0.1rem solid var(--SSync-border-color);
   border-radius: 0.375rem;
-  background-color: rgb(67, 30, 68);
+  background-color: rgb(240, 237, 240);
   padding-left: calc(30rem - 23rem);
   box-shadow: inset 0 0 0 1px rgb(104, 74, 104);
   transition: all 0.5s ease-out;
 }
 .search-bar-input:focus {
-  background-color: var(--slack-background);
-  color: var(--slack-white);
+  background-color:#ffffff;
+  color: var(--SSync-white);
 }
 .search-bar-input::placeholder {
-  color: var(--slack-white);
+  color: var(--SSync-white);
 }
 .search-bar i {
   position: absolute;
   font-size: 0.7rem;
   left: 5rem;
-  color: var(--slack-white);
+  color: var(--SSync-white);
 }
 .nav .move-left {
   margin-left: auto;
@@ -331,7 +332,7 @@ body::-webkit-scrollbar-thumb {
 }
 .nav .move-left i {
   font-size: 1.125rem;
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
 }
 .nav .move-left .user-img-wrapper {
   width: 1.5rem;
@@ -355,17 +356,17 @@ body::-webkit-scrollbar-thumb {
 
 /* fixed sidebar */
 .sidebar {
-  border-top: 0.1rem solid var(--slack-border-color);
+  border-top: 0.1rem solid var(--SSync-border-color);
   grid-column: 1 / 2;
   height: 100vh;
-  background-color: var(--slack-other-bckground);
+  background-color: var(--SSync-other-bckground);
   display: grid;
   grid-template-columns: 4rem minmax(6.25rem, 16.25rem);
 }
 /* body  */
 .body {
   grid-column: 2 / -1;
-  background-color: var(--slack-main-white);
+  background-color: var(--SSync-main-white);
   border-right: 0.1rem solid rgba(29, 28, 29, 0.13);
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -374,7 +375,7 @@ body::-webkit-scrollbar-thumb {
 .content {
   grid-column: 1 / 1;
   height: 100vh;
-  border-right: 0.1rem solid var(--slack-white);
+  border-right: 0.1rem solid var(--SSync-white);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 10rem;
@@ -386,13 +387,13 @@ body::-webkit-scrollbar-thumb {
 /* body right-sidebar */
 .right-sidebar {
   grid-column: 2 /-1;
-  background-color: var(--slack-main-white);
+  background-color: var(--SSync-main-white);
 }
 
 /* first left-sidebar */
 .sidebar-1 {
   grid-column: 1 / 1;
-  border-right: 0.1rem solid var(--slack-border-color);
+  border-right: 0.1rem solid var(--SSync-border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -411,11 +412,11 @@ body::-webkit-scrollbar-thumb {
   height: 2rem;
   width: 2rem;
   margin-bottom: 0.5rem;
-  border: 0.125rem solid var(--slack-other-bckground);
+  border: 0.125rem solid var(--SSync-other-bckground);
   border-radius: 0.3rem;
 }
 .sidebar-1 .box-1 {
-  background-color: var(--slack-red);
+  background-color: var(--SSync-red);
 }
 
 .sidebar-1 .box-2 {
@@ -427,7 +428,7 @@ body::-webkit-scrollbar-thumb {
 }
 .sidebar-1 .box-3 {
   font-size: 1.2rem;
-  color: var(--slack-white);
+  color: var(--SSync-white);
 }
 /* first left-sidebar ended */
 
@@ -437,10 +438,10 @@ body::-webkit-scrollbar-thumb {
 
 /* adds border-bottom to all section elements except the last one*/
 .sidebar-2 section:not(:last-of-type) {
-  border-bottom: 0.1rem solid var(--slack-border-color);
+  border-bottom: 0.1rem solid var(--SSync-border-color);
 }
 .sidebar-user {
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
   position: relative;
 }
 .sidebar-user-info {
@@ -462,10 +463,10 @@ body::-webkit-scrollbar-thumb {
   margin-left: 0.5rem;
   margin-bottom: 1rem;
   font-size: 0.8rem;
-  color: var(--slack-white);
+  color: var(--SSync-white);
 }
 .sidebar-user-info-additional i {
-  color: var(--slack-green);
+  color: var(--SSync-green);
   font-size: 0.5rem;
   padding-right: 0.3rem;
 }
@@ -475,15 +476,15 @@ body::-webkit-scrollbar-thumb {
   right: 1rem;
   width: 2rem;
   height: 2rem;
-  border: 0.1rem solid var(--slack-main-white);
+  border: 0.1rem solid var(--SSync-main-white);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--slack-main-white);
+  background-color: var(--SSync-main-white);
 }
 .user-edit-icon i {
-  color: var(--slack-other-bckground);
+  color: var(--SSync-other-bckground);
 }
 
 /* user info ends */
@@ -493,7 +494,7 @@ body::-webkit-scrollbar-thumb {
 .unread-header {
   display: flex;
   align-items: center;
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
   margin-top: 0.7rem;
 }
 .unread-header .unread-icons {
@@ -516,7 +517,7 @@ body::-webkit-scrollbar-thumb {
 }
 .unread ul a {
   text-decoration: none;
-  color: var(--slack-white);
+  color: var(--SSync-white);
   font-size: 0.8rem;
 }
 .unread ul i {
@@ -530,7 +531,7 @@ body::-webkit-scrollbar-thumb {
 .channels-header {
   display: flex;
   align-items: center;
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
   margin-top: 0.7rem;
   /* text-transform: uppercase; */
 }
@@ -547,7 +548,7 @@ body::-webkit-scrollbar-thumb {
 }
 .channels ul a {
   text-decoration: none;
-  color: var(--slack-white);
+  color: var(--SSync-white);
   font-size: 0.8rem;
   display: flex;
   align-items: center;
@@ -556,12 +557,12 @@ body::-webkit-scrollbar-thumb {
   margin-right: 1rem;
 }
 .channels .make-white {
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
   font-size: 16px; 
 }
 .online {
   font-size: 0.5rem;
-  color: var(--slack-green);
+  color: var(--SSync-green);
 }
 .offline {
   font-size: 0.5rem;
@@ -572,7 +573,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: bold;
 }
 .channels .active > a {
-  color: var(--slack-green);
+  color: var(--SSync-green);
   font-size: 1rem;
 }
 
@@ -584,7 +585,7 @@ body::-webkit-scrollbar-thumb {
 .direct-messages-header {
   display: flex;
   align-items: center;
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
   margin-top: 0.7rem;
   /* text-transform: uppercase; */
 }
@@ -603,7 +604,7 @@ body::-webkit-scrollbar-thumb {
 }
 .direct-messages ul a {
   text-decoration: none;
-  color: var(--slack-white);
+  color: var(--SSync-white);
   font-size: 0.8rem;
   display: flex;
   align-items: center;
@@ -612,7 +613,7 @@ body::-webkit-scrollbar-thumb {
   margin-right: 1rem;
 }
 .direct-messages .make-white {
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
   font-size: 20px; 
   color: blue;
 }
@@ -622,7 +623,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: bold;
 }
 .direct-messages .active > a {
-  color: var(--slack-green);
+  color: var(--SSync-green);
   font-size: 1rem;
 }
 /* end of direct messages  */
@@ -636,7 +637,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   background-color: #fff;
-  border-bottom: 0.1rem solid var(--slack-white);
+  border-bottom: 0.1rem solid var(--SSync-white);
   box-shadow: 0 0 0.2rem -0.2rem rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
@@ -656,7 +657,7 @@ body::-webkit-scrollbar-thumb {
 }
 .channel-content-header-name i {
   font-size: 0.8rem;
-  color: var(--slack-dark-blue);
+  color: var(--SSync-dark-blue);
   margin-left: 0.5rem;
 }
 .content-header-icons {
@@ -714,15 +715,15 @@ body::-webkit-scrollbar-thumb {
 .feeds-user-avatar span {
   width: 1.2rem;
   height: 1.2rem;
-  border: 0.1rem solid var(--slack-yellow);
+  border: 0.1rem solid var(--SSync-yellow);
   border-radius: 0.275rem;
   padding: 0.2rem;
   box-shadow: 0 0 0 0.1rem hsl(0, 0%, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--slack-yellow);
-  color: var(--slack-main-white);
+  background-color: var(--SSync-yellow);
+  color: var(--SSync-main-white);
   position: absolute;
   top: 1.5rem;
   right: -0.3rem;
@@ -746,8 +747,8 @@ body::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   font-size: 0.7rem;
   border-radius: 0.2rem;
-  background-color: var(--slack-tag-background);
-  color: var(--slack-tag-forecolor);
+  background-color: var(--SSync-tag-background);
+  color: var(--SSync-tag-forecolor);
   line-height: 2.6;
   margin-right: 0.5rem;
 }
@@ -767,7 +768,7 @@ body::-webkit-scrollbar-thumb {
 }
 .codeblock {
   background-color: #3f0e40;
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
   padding: 0.2rem;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -780,9 +781,9 @@ body::-webkit-scrollbar-thumb {
 
 .mention {
   padding: 0.1rem 0.2rem;
-  color: var(--slack-blue);
+  color: var(--SSync-blue);
   border-radius: 0.2rem;
-  background-color: var(--slack-tag-background);
+  background-color: var(--SSync-tag-background);
 }
 
 .preparatory-text {
@@ -797,14 +798,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .file-figure {
-  border: 0.1rem solid var(--slack-white);
+  border: 0.1rem solid var(--SSync-white);
   padding: 0.8rem 20rem 0.8rem 0.8rem;
   border-radius: 0.375rem;
   display: flex;
   /* width: 34.5rem; */
 }
 .file-figure i {
-  color: var(--slack-green);
+  color: var(--SSync-green);
   margin-right: 2rem;
 }
 .file-detail {
@@ -855,9 +856,9 @@ body::-webkit-scrollbar-thumb {
   border-top-left-radius: 0.3125rem;
   border-top-right-radius: 0.3125rem;
   outline: none;
-  border-top: 0.0625rem solid var(--slack-input-border-color);
-  border-left: 0.0625rem solid var(--slack-input-border-color);
-  border-right: 0.0625rem solid var(--slack-input-border-color);
+  border-top: 0.0625rem solid var(--SSync-input-border-color);
+  border-left: 0.0625rem solid var(--SSync-input-border-color);
+  border-right: 0.0625rem solid var(--SSync-input-border-color);
   border-bottom: none;
   overflow: auto;
 }
@@ -867,11 +868,11 @@ body::-webkit-scrollbar-thumb {
   padding: 0.2rem 0.5rem;
   display: flex;
   align-items: center;
-  background-color: var(--slack-tag-background);
+  background-color: var(--SSync-tag-background);
   position: absolute;
   border-bottom-left-radius: 0.3125rem;
   border-bottom-right-radius: 0.3125rem;
-  border: 0.0625rem solid var(--slack-input-border-color);
+  border: 0.0625rem solid var(--SSync-input-border-color);
   top: 70%;
   word-wrap: break-word;
   font-weight: 300;
@@ -880,10 +881,10 @@ body::-webkit-scrollbar-thumb {
   padding: 0.3rem 0.45rem;
   margin-right: auto;
   cursor: pointer;
-  color: var(--slack-tag-forecolor);
+  color: var(--SSync-tag-forecolor);
 }
 .move-right > i:first-of-type {
-  border-right: 0.1rem solid var(--slack-tag-border-color);
+  border-right: 0.1rem solid var(--SSync-tag-border-color);
 }
 .move-right {
   margin-right: auto;
@@ -901,16 +902,16 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.5s ease-out;
 }
 .button:hover {
-  background-color: var(--slack-green);
+  background-color: var(--SSync-green);
 }
 .button:hover i {
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
 }
-.btn-slack:hover {
-  background-color: var(--slack-background);
+.btn-SSync:hover {
+  background-color: var(--SSync-background);
 }
-.btn-slack:hover i {
-  color: var(--slack-main-white);
+.btn-SSync:hover i {
+  color: var(--SSync-main-white);
 }
 /* end of feeds */
 /* end of body content */
@@ -920,7 +921,7 @@ body::-webkit-scrollbar-thumb {
   overflow: auto;
 }
 .right-sidebar section:not(:last-of-type) {
-  border-bottom: 0.1rem solid var(--slack-white);
+  border-bottom: 0.1rem solid var(--SSync-white);
 }
 .right-sidebar-header {
   display: flex;
@@ -943,7 +944,7 @@ body::-webkit-scrollbar-thumb {
 }
 .right-sidebar-header i {
   margin-left: auto;
-  color: var(--slack-white);
+  color: var(--SSync-white);
   margin-right: 1rem;
   font-size: 1.2rem;
   cursor: pointer;
@@ -969,8 +970,8 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--slack-tag-background);
-  color: var(--slack-tag-border-color);
+  background-color: var(--SSync-tag-background);
+  color: var(--SSync-tag-border-color);
   margin-bottom: 0.2rem;
 }
 .right-sidebar-contact-details span i {
@@ -978,7 +979,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 1.2rem;
 }
 .right-sidebar-contact-details p {
-  color: var(--slack-tag-border-color);
+  color: var(--SSync-tag-border-color);
 }
 .right-sidebar-about {
   margin-bottom: 1rem;
@@ -995,16 +996,16 @@ body::-webkit-scrollbar-thumb {
 }
 .about-header i {
   margin-left: auto;
-  color: var(--slack-white);
+  color: var(--SSync-white);
   margin-right: 1rem;
   font-size: 0.8rem;
 }
 .about-details {
   padding: 0.3rem 0.5rem;
   margin: 0.5rem 1rem;
-  background-color: var(--slack-tag-background);
+  background-color: var(--SSync-tag-background);
   border-radius: 0.625rem;
-  color: var(--slack-tag-border-color);
+  color: var(--SSync-tag-border-color);
 }
 .about-detail {
   margin: 0.5rem;
@@ -1052,7 +1053,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   margin-left: auto;
-  color: var(--slack-white);
+  color: var(--SSync-white);
   margin-right: 1rem;
   font-size: 0.8rem;
 }
@@ -1066,28 +1067,28 @@ body::-webkit-scrollbar-thumb {
 .zenith-org {
   width: 1.2rem;
   height: 1.2rem;
-  border: 0.1rem solid var(--slack-yellow);
+  border: 0.1rem solid var(--SSync-yellow);
   border-radius: 0.275rem;
   padding: 0.2rem;
   box-shadow: 0 0 0 0.1rem hsl(0, 0%, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--slack-yellow);
-  color: var(--slack-main-white);
+  background-color: var(--SSync-yellow);
+  color: var(--SSync-main-white);
 }
 .acme-org {
   width: 1.2rem;
   height: 1.2rem;
-  border: 0.1rem solid var(--slack-dark-blue);
+  border: 0.1rem solid var(--SSync-dark-blue);
   border-radius: 0.275rem;
   padding: 0.2rem;
   box-shadow: 0 0 0 0.1rem hsl(0, 0%, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--slack-dark-blue);
-  color: var(--slack-main-white);
+  background-color: var(--SSync-dark-blue);
+  color: var(--SSync-main-white);
 }
 /* ends right-sidebar */
 /* end of body */
@@ -1097,19 +1098,19 @@ body::-webkit-scrollbar-thumb {
   margin-right: 1.2rem;
   width: 1.2rem;
   height: 0.8rem;
-  border: 0.1rem solid var(--slack-red);
+  border: 0.1rem solid var(--SSync-red);
   border-radius: 0.375rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--slack-red);
-  color: var(--slack-main-white);
+  background-color: var(--SSync-red);
+  color: var(--SSync-main-white);
 }
 
 /* Channels creation */
 
 .channel-container {
-  background: var(--slack-background);
+  background: var(--SSync-background);
   height: 100vh;
   position: relative;
 }
@@ -1150,7 +1151,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 .top-header {
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
   font-size: 1rem;
   font-weight: bold;
   display: flex;
@@ -1165,7 +1166,7 @@ body::-webkit-scrollbar-thumb {
 .icon-wrapper {
   width: 1.2rem;
   height: 1.2rem;
-  border: 0.1rem solid var(--slack-main-white);
+  border: 0.1rem solid var(--SSync-main-white);
   border-radius: 0.275rem;
   margin-right: 0.6rem;
   margin-left: 0.6rem;
@@ -1173,15 +1174,15 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--slack-background);
-  color: var(--slack-main-white);
+  background-color: var(--SSync-background);
+  color: var(--SSync-main-white);
 }
 
 .create-form {
   width: 35rem;
   height: 100%;
   margin-top: 1.5rem;
-  background: var(--slack-main-white);
+  background: var(--SSync-main-white);
   border-radius: 0.625rem;
   padding-top: 2.5rem;
   padding-left: 1.5rem;
@@ -1201,7 +1202,7 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  color: var(--slack-white);
+  color: var(--SSync-white);
   cursor: pointer;
 }
 .brief-description {
@@ -1209,7 +1210,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: bold;
   font-size: small;
   line-height: 1.4;
-  color: var(--slack-white);
+  color: var(--SSync-white);
   margin-bottom: 1rem;
 }
 .label {
@@ -1233,29 +1234,29 @@ body::-webkit-scrollbar-thumb {
   padding: 0 1rem;
   border: 0.1rem solid #ddd;
   border-radius: 0.325rem;
-  background-color: var(--slack-tag-background);
-  color: var(--slack-cyan);
+  background-color: var(--SSync-tag-background);
+  color: var(--SSync-cyan);
   transition: all 0.3s ease-in;
 }
 .form-control:focus {
-  border: 0.125rem solid var(--slack-green);
+  border: 0.125rem solid var(--SSync-green);
 }
 .form-control::placeholder {
-  color: var(--slack-white);
+  color: var(--SSync-white);
 }
 .prepend {
   padding-left: 2rem;
   padding-right: 2.5rem;
 }
 .prepend-icon {
-  color: var(--slack-white);
+  color: var(--SSync-white);
   padding: 0.5rem;
   position: absolute;
   top: 0.28rem;
 }
 
 .number {
-  color: var(--slack-white);
+  color: var(--SSync-white);
   padding: 0.5rem;
   position: absolute;
   top: 0.28rem;
@@ -1310,7 +1311,7 @@ body::-webkit-scrollbar-thumb {
   transition: left 0.25s ease;
 }
 .switch-input:checked + .switch-label::before {
-  background-color: var(--slack-red);
+  background-color: var(--SSync-red);
 }
 .switch-input:checked + .switch-label::after {
   left: 1.5rem;
@@ -1325,7 +1326,7 @@ body::-webkit-scrollbar-thumb {
 
 .privacy-label span {
   font-size: small;
-  color: var(--slack-white);
+  color: var(--SSync-white);
 }
 
 .btn {
@@ -1349,7 +1350,7 @@ body::-webkit-scrollbar-thumb {
 }
 .btn-primary:hover {
   background-color: #350d36;
-  color: var(--slack-white);
+  color: var(--SSync-white);
 }
 .btn-small-margin {
   margin-left: 0;
@@ -1406,14 +1407,14 @@ body::-webkit-scrollbar-thumb {
 .user-name i {
   margin-left: 0.5rem;
   font-size: 0.6rem;
-  color: var(--slack-green);
+  color: var(--SSync-green);
 }
 .user-title {
   font-weight: normal;
   font-size: 1rem;
 }
 .last-online {
-  border-top: 0.1rem solid var(--slack-tag-border-color);
+  border-top: 0.1rem solid var(--SSync-tag-border-color);
   margin-bottom: 1rem;
 }
 .local-time {
@@ -1436,7 +1437,7 @@ body::-webkit-scrollbar-thumb {
   margin-left: 0;
 }
 .btn-bottons {
-  background-color: var(--slack-cyan);
+  background-color: var(--SSync-cyan);
   color: #376cdf;
 }
 .btn-padding-lg {
@@ -1457,7 +1458,7 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.5s;
 }
 .sidebar-wrapper section:not(:last-of-type) {
-  border-bottom: 0.1rem solid var(--slack-border-color);
+  border-bottom: 0.1rem solid var(--SSync-border-color);
 }
 .user-sidebar {
   position: fixed;
@@ -1465,7 +1466,7 @@ body::-webkit-scrollbar-thumb {
   left: -16.256rem;
   width: 16.256rem;
   height: 100vh;
-  background-color: var(--slack-other-bckground);
+  background-color: var(--SSync-other-bckground);
   box-shadow: -0.1rem 0 0.5rem rgba(0, 0, 0, 0.3);
   transition: left 0.5s cubic-bezier(1, 0, 0, 1);
   overflow: auto;
@@ -1516,7 +1517,7 @@ body::-webkit-scrollbar-thumb {
 .disabled {
   cursor: initial;
   background-color: var(--dark-grey);
-  color: var(--slack-main-white);
+  color: var(--SSync-main-white);
 }
 .hidden {
   display: none;
@@ -1665,7 +1666,7 @@ body::-webkit-scrollbar-thumb {
     padding-right: 2.5rem;
   }
   .prepend-icon {
-    color: var(--slack-white);
+    color: var(--SSync-white);
     padding: 0.5rem;
     position: absolute;
     top: 0.05rem;

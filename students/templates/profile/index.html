@@ -1,0 +1,94 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="{%static 'profile/css/style.css'%}" />
+	<link rel="stylesheet" href="{%static 'profile/style.css'%}" />
+
+  </head>
+  <body>
+	
+    <div class="header__wrapper">
+      <header></header>
+	 
+      <div class="cols__container">
+        <div class="left__col">
+          <div class="img__container">
+            <img src="{{ info.profile.url }}" alt="Anna Smith" />
+            <span></span>
+          </div>
+          <h2>{{user.first_name}} {{user.last_name}}</h2>
+          <p>{{info.profession}}</p>
+          <p>{{user.email}}</p>
+
+         
+
+          <div class="content">
+            <p>
+              {{info.bio}}
+            </p>
+
+            <ul>
+              <li><i class="fab fa-twitter"></i></li>
+              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-dribbble"></i>
+            </ul>
+          </div>
+        </div>
+        <div class="right__col">
+          <nav>
+            <ul>
+				<a href="/home/{{pk}}"><button>Home</button></a>
+              <li><a href="" style="background-color: rgb(220, 220, 224); padding: 7px;">Threads</a></li>
+			  
+            </ul>
+            <a href="/editProfile/{{pk}}"><button>Edit</button></a>
+          </nav>
+
+          <div class="photos">
+			{%if myThreads%}
+
+			<table class="table custom-table">
+				<thead>
+					<tr>  
+					  <th scope="col">Title</th>
+					  <th scope="col">Group Members</th>
+					  <th scope="col">Time</th>
+					  
+					</tr>
+				  </thead>
+			
+            {%for thread in myThreads%}
+			<tr>
+				<td><a href="/home/{{thread.threads}}" style="color: black;">{{thread.threads}}</a></td>
+				<td>{{thread.groupMembers}}</td>
+				<td>{{thread.timeCreated}}</td>
+			</tr>
+			
+			{%endfor%}
+		</table>
+		{%else%}
+		<h1>Create new <a href = "/addNew">Threads </a></h1>
+		{%endif%}
+				</head>
+				<body>
+					
+				</body>
+			
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

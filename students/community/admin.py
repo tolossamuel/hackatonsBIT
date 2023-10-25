@@ -8,3 +8,4 @@ class UserLoginAdmin(admin.ModelAdmin):
 admin.site.register(UserLogin, UserLoginAdmin)
 admin.site.register(postUser)
 admin.site.register(Discussion)
+

@@ -1,5 +1,51 @@
 const editControls = document.querySelector(".input-toolbar-icons");
 
+// autocomplete.js
+const searchInput = document.getElementById("search-input");
+const suggestionsList = document.getElementById("suggestions");
+const resultsContainer = document.getElementById("results");
+
+searchInput.addEventListener("input", function () {
+    const query = this.value;
+    if (query.trim() !== "") {
+        fetch(`/search/?q=${query}`)
+            .then(response => response.json())
+            .then(data => {
+                suggestionsList.innerHTML = "";
+                if (data.results.length > 0) {
+                    data.results.forEach(result => {
+                        const listItem = document.createElement("li");
+                        listItem.textContent = result.threads;
+                        listItem.style.color = "white";
+                        listItem.style.marginLeft = "24px";
+                        listItem.addEventListener("click", function () {
+                            searchInput.value = result.threads;
+                            suggestionsList.innerHTML = "";
+                        });
+                        suggestionsList.appendChild(listItem);
+                    });
+                    suggestionsList.style.display = "block";
+                } else {
+                    suggestionsList.style.display = "none";
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+    } else {
+        suggestionsList.innerHTML = "";
+        suggestionsList.style.display = "none";
+    }
+});
+
+// Hide the results when clicking outside the autocomplete box
+document.addEventListener("click", function (event) {
+    if (event.target !== searchInput && event.target !== suggestionsList) {
+        suggestionsList.innerHTML = "";
+        suggestionsList.style.display = "none";
+    }
+});
+
 editControls.addEventListener("click", function (event) {
   const command =
     event.target !== undefined &&

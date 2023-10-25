@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>edit profile form - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+	  
+
+      rel="stylesheet"
+    />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style type="text/css">
+      body {
+        margin-top: 20px;
+      }
+      .avatar {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container bootstrap snippets bootdey">
+		<a href="/profile/{{pk}}"><h1 class="text-primary"><i class="fas fa-arrow-left"></i></h1></a>
+
+      <hr />
+      <div class="row">
+        <div class="col-md-3">
+          <div class="text-center">
+            <img
+              src="{{info.profile.url}}"
+              class="avatar img-circle img-thumbnail"
+              alt="avatar"
+            />
+            <h6>Upload a different photo...</h6>
+            <input type="file" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-9 personal-info">
+          <div class="alert alert-info alert-dismissable">
+            <a class="panel-close close" data-dismiss="alert">×</a>
+            <i class="fa fa-coffee"></i>
+            This is an <strong>.alert</strong>. Use this to show important
+            messages to the user.
+          </div>
+          <h3>Personal info</h3>
+          <form action "" method = "POST" class="form-horizontal" role="form">
+			{% csrf_token %} 
+            <div class="form-group">
+              <label class="col-lg-3 control-label">First name:</label>
+              <div class="col-lg-8">
+                <input class="form-control" id = "first_name", name = "first_name" value="{{user.first_name}}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Last name:</label>
+              <div class="col-lg-8">
+                <input class="form-control"  id = "last_name", name = "last_name" type="text" value="{{user.last_name}}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Username:</label>
+              <div class="col-lg-8">
+                <input class="form-control"  id = "username", name = "username" type="text" value = "{{user.username}}" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Email:</label>
+              <div class="col-lg-8">
+                <input
+				id = "email", name = "email"
+                  class="form-control"
+                  type="text"
+                  value="{{user.email}}"
+                />
+              </div>
+            </div>
+			<div class="form-group">
+				<label class="col-lg-3 control-label">Profession:</label>
+				<div class="col-lg-8">
+				  <input
+				  id = "profession", name = "profession"
+					class="form-control"
+					type="text"
+					value="{{info.profession}}"
+				  />
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label class="col-lg-3 control-label">Bio:</label>
+				<div class="col-lg-8">
+				  <input
+				  id = "bio", name = "bio"
+					class="form-control"
+					type="text"
+					value="{{info.bio}}"
+				  />
+				</div>
+			  </div>
+			  <div class="form-group">
+				<div class="col-lg-8">
+            		<input type="submit" name="save" id="submit" value="Save">
+				</div>
+			   </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript"></script>
+  </body>
+</html>
